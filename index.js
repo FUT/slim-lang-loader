@@ -4,7 +4,7 @@ var fs = require("fs")
 var path = require("path")
 
 function compileToSlim(remainingRequest) {
-	return execSync(`slimrb ${remainingRequest}`)
+	return execSync(`slimrb --option attr_list_delims="{'[' => ']'}" ${remainingRequest}`)
 }
 
 module.exports = function(source) {
